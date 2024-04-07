@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-07T17:37:15.089724" rpa="false" schemaversion="5">
+<suite id="s1" name="Dynamic Test" source="C:\Users\sivab\OneDrive\Documents\Projects\QuoDroid\dynamic_test.robot">
+<test id="s1-t1" name="Open google.com" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-07T17:37:15.252280" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg time="2024-04-07T17:37:20.928756" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-07T17:37:20.928756" level="FAIL">InvalidArgumentException: Message: Malformed URL: URL constructor: chrome is not a valid URL.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
+InvalidArgumentError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:383:5
+GeckoDriver.prototype.navigateTo@chrome://remote/content/marionette/driver.sys.mjs:837:11
+</msg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-04-07T17:37:15.252280" elapsed="5.678470">InvalidArgumentException: Message: Malformed URL: URL constructor: chrome is not a valid URL.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
+InvalidArgumentError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:383:5
+GeckoDriver.prototype.navigateTo@chrome://remote/content/marionette/driver.sys.mjs:837:11
+</status>
+</kw>
+<kw name="Go To url">
+<arg>https://google.com</arg>
+<status status="NOT RUN" start="2024-04-07T17:37:20.932745" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-07T17:37:15.251283" elapsed="5.681462">InvalidArgumentException: Message: Malformed URL: URL constructor: chrome is not a valid URL.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
+InvalidArgumentError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:383:5
+GeckoDriver.prototype.navigateTo@chrome://remote/content/marionette/driver.sys.mjs:837:11
+</status>
+</test>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="FAIL" start="2024-04-07T17:37:15.091695" elapsed="5.842047"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Dynamic Test">Dynamic Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

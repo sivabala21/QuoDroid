@@ -11,9 +11,15 @@ def execute_robot_tests(test_data):
     # Dynamically generate a .robot file with test data
     # For simplicity, let's assume test_data is a list of dictionaries with 'title' and 'steps'
     with open('dynamic_test.robot', 'w') as f:
+        f.write("""
+*** Settings ***
+Documentation     Simple example using SeleniumLibrary.
+Library           SeleniumLibrary
+
+""")
         for test_case in test_data:
             title = test_case['title']
-            steps = '\n'.join([f"    {step}" for step in test_case['steps']])
+            steps = '\n'.join([f"    {step.replace('browser=', 'url=')}" if 'Open Browser' in step else f"    {step}" for step in test_case['steps']])
             f.write(f"""
 *** Test Cases ***
 {title}
