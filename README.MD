@@ -69,14 +69,18 @@ The solution involves creating a Django API endpoint that receives test data, dy
 ## Example Usage (assuming TestDataSerializer expects a list of dictionaries, each with a 'steps' key):
 
 ```json
-[
-  {
-    "steps": [
-      "Open Browser [https://google.com](https://google.com)",
-      "Search for keyword 'automated testing'"
-    ]
-  }
-]
+{
+  "tests": [
+    {
+      "title": "Login with correct Username and Password",
+      "steps": [
+        "Open Browser url='https://the-internet.herokuapp.com/login'",
+        "Input Text          username username='tomsmith'",
+        "Input Text          password password='SuperSecretPassword!'"
+      ]
+    }
+  ]
+}
 ```
 
 ## Conclusion
