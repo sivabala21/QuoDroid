@@ -60,7 +60,7 @@ Test Case 1
     return result.stdout.decode('utf-8')
 
 class TestView(APIView):
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         serializer = TestDataSerializer(data=request.data)
         if serializer.is_valid():
             tests_data = serializer.validated_data['tests']
