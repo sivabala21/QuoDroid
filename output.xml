@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-08T12:18:07.868770" rpa="false" schemaversion="5">
+<suite id="s1" name="Dynamic Test" source="C:\Users\sivab\OneDrive\Documents\Projects\QuoDroid\dynamic_test.robot">
+<test id="s1-t1" name="Test Case 1" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-08T12:18:08.037878" level="INFO">Opening browser 'firefox' to base url 'https://google.com'.</msg>
+<arg>${arg_name0}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-08T12:18:08.037878" elapsed="13.729279"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-08T12:18:21.916314" level="INFO">Opening url 'https://google.com'</msg>
+<arg>${arg_name1}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-08T12:18:21.916314" elapsed="1.874510"/>
+</kw>
+<status status="PASS" start="2024-04-08T12:18:08.036897" elapsed="15.753927"/>
+</test>
+<status status="PASS" start="2024-04-08T12:18:07.870784" elapsed="15.921038"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dynamic Test">Dynamic Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

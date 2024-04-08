@@ -33,11 +33,11 @@ Library    SeleniumLibrary
         for i, argument in enumerate(arguments):
             if '=' in argument:
                 arg_name, arg_value = argument.split('=', 1)
-                f.write(f"${{arg_name}}     {arg_value}\n")
+                f.write(f"${{arg_name{i}}}     {arg_value}\n")
             else:
                 arg_name = f"arg{i}"
                 arg_value = argument
-                f.write(f"${{arg_name}}     {arg_value}\n")
+                f.write(f"${{arg_name{i}}}     {arg_value}\n")
 
         f.write("""\n*** Test Cases ***
 Test Case 1
@@ -49,7 +49,7 @@ Test Case 1
                     f.write(f"    {command}     {arg_name}\n")
                 else:
                     arg_name = f"arg{i}"
-                    f.write(f"    {command}     ${{arg_name}}\n")
+                    f.write(f"    {command}     ${{arg_name{i}}}\n")
             else:
                 f.write(f"    {command}\n")
 
