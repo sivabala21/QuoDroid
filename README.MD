@@ -56,6 +56,29 @@ The solution involves creating a Django API endpoint that receives test data, dy
 
 3. Receive test execution results in the response.
 
+## Usage
+
+1. **Send a POST Request:**
+
+   - Construct a POST request to the specified endpoint (e.g., `http://127.0.0.1:8000/testapp/tests/v1/execute`).
+   - Include test data in the request body formatted according to the `TestDataSerializer`.
+
+2. **Receive Test Results:**
+   The response will contain the test execution results (success/failure and details).
+
+## Example Usage (assuming TestDataSerializer expects a list of dictionaries, each with a 'steps' key):
+
+```json
+[
+  {
+    "steps": [
+      "Open Browser [https://google.com](https://google.com)",
+      "Search for keyword 'automated testing'"
+    ]
+  }
+]
+```
+
 ## Conclusion
 
 By leveraging Django and Robot Framework, it's possible to dynamically generate and execute test cases with varying parameters efficiently. This solution provides a flexible and scalable approach to automated testing, enabling seamless integration into continuous integration and deployment pipelines.
