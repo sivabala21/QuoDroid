@@ -16,12 +16,12 @@ def execute_robot_tests(test_data):
             if len(parts) == 3:
                 command, _, argument = parts
                 commands.append(command.strip())
-                arguments.append(argument.strip())
+                arguments.append(argument.strip("'"))
             else:
                 # Handle arguments without an equal sign
                 command, argument = step.split(maxsplit=1)
                 commands.append(command.strip())
-                arguments.append(argument.strip())
+                arguments.append(argument.strip("'"))
 
     # Dynamically generate a .robot file with variables and test cases
     with open('dynamic_test.robot', 'w') as f:
