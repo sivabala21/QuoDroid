@@ -1,0 +1,25 @@
+# Ignore log files
+log*
+*.log
+
+
+
+# Ignore other unneeded files
+*.pyc
+*.pyo
+*.pyd
+*.pyd
+*.swp
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+.env
+.db
+.db-journal
+coverage
+dist
+build
+.env.local
+.env.*.local
