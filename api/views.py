@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from .serializers import TestDataSerializer
 import subprocess
 import tempfile
+import re
 
 class TestView(APIView):
     def post(self, request):
@@ -20,23 +21,21 @@ class TestView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def generate_robot_file(self, tests_data):
-        robot_file = f"""*** Settings ***
+        robot_file = """*** Settings ***
 Library    SeleniumLibrary
 
 *** Variables ***
 """
         for test_case in tests_data:
-            for step in test_case['steps']:
+            robot_file += f"Test Case {test_case['title']}\n"
+            for i, step in enumerate(test_case['steps'], start=1):
                 parts = re.split(r"((?:[\w']+)=)", step, maxsplit=1)
                 if len(parts) == 3:
                     command, _, argument = parts
-                    robot_file += f"${{arg{len(robot_file.splitlines())-1}}}     {argument.strip('\'')}\n"
+                    robot_file += f"    {command}    ${'arg' + str(i)}={argument.strip('\'')}\n"
                 else:
                     command, argument = step.split(maxsplit=1)
-                    robot_file += f"${{arg{len(robot_file.splitlines())-1}}}     {argument.strip('\'')}\n"
-        robot_file += """*** Test Cases ***
-Test Case 1"""
-        for test_case in tests_data:
-            robot_file += "\n    " + "    ".join(step.strip() for step in test_case['steps'])
+                    robot_file += f"    {command}    ${'arg' + str(i)}={argument.strip('\'')}\n"
         return robot_file
+
 
