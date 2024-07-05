@@ -54,10 +54,10 @@ Test Case 1
                 f.write(f"    {command}\n")
 
     # Execute the dynamically generated test suite
-    result = subprocess.run(['robot', 'dynamic_test.robot'], capture_output=True)
-
-    # Return the test execution result
-    return result.stdout.decode('utf-8')
+    # Execute the dynamically generated test suite in a separate process to avoid blocking the system
+    process = subprocess.Popen(['robot', 'dynamic_test.robot'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    return stdout.decode('utf-8')
 
 class TestView(APIView):
     def post(self, request):
