@@ -83,6 +83,10 @@ The solution involves creating a Django API endpoint that receives test data, dy
   ]
 }
 ```
+## Video Demo:
+
+![Alt Text](https://giphy.com/embed/NvD18VslmsFaPNKPVY)
+
 
 ## Conclusion
 
