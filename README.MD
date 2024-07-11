@@ -76,7 +76,8 @@ The solution involves creating a Django API endpoint that receives test data, dy
       "steps": [
         "Open Browser url='https://the-internet.herokuapp.com/login'",
         "Input Text          username username='tomsmith'",
-        "Input Text          password password='SuperSecretPassword!'"
+        "Input Text          password password='SuperSecretPassword!'",
+        "Click Element     button=xpath:/html/body/div[2]/div/div/form/button/i"
       ]
     }
   ]
