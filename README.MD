@@ -52,7 +52,7 @@ The solution involves creating a Django API endpoint that receives test data, dy
 
 1. Start the Django development server:
 
-2. Send a POST request to the specified endpoint (`/testai/tests/v1/execute`) with test data formatted according to the `TestDataSerializer`.
+2. Send a POST request to the specified endpoint (`/tests/api`) with test data formatted according to the `TestDataSerializer`.
 
 3. Receive test execution results in the response.
 
@@ -60,7 +60,7 @@ The solution involves creating a Django API endpoint that receives test data, dy
 
 1. **Send a POST Request:**
 
-   - Construct a POST request to the specified endpoint (e.g., `http://127.0.0.1:8000/testapp/tests/v1/execute`).
+   - Construct a POST request to the specified endpoint (e.g., `http://127.0.0.1:8000/tests/api`).
    - Include test data in the request body formatted according to the `TestDataSerializer`.
 
 2. **Receive Test Results:**
